@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.arjungupta08.paging3.paging.QuotePagingAdapter
 import com.arjungupta08.paging3.repository.Repository
 import com.arjungupta08.paging3.viewmodel.MainViewModel
 import com.arjungupta08.paging3.viewmodel.MainViewModelFactory
@@ -16,15 +19,23 @@ class MainActivity : AppCompatActivity() {
     private lateinit var viewModel: MainViewModel
 
     @Inject lateinit var mainViewModelFactory: MainViewModelFactory
+
+    private lateinit var adapter: QuotePagingAdapter
+    private val recyclerView : RecyclerView
+        get() = findViewById(R.id.recyclerView)
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        adapter = QuotePagingAdapter()
         viewModel = ViewModelProvider(this, mainViewModelFactory)[MainViewModel::class.java]
 
-        viewModel.getLiveQuotes.observe(this){
-            Log.d("TAG", it.toString())
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = adapter
+
+        viewModel.quotesList.observe(this) {
+            adapter.submitData(lifecycle, it)
         }
     }
-
 }

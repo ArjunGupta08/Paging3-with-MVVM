@@ -2,12 +2,11 @@ package com.arjungupta08.paging3
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.arjungupta08.paging3.paging.LoaderAdapter
 import com.arjungupta08.paging3.paging.QuotePagingAdapter
-import com.arjungupta08.paging3.repository.Repository
 import com.arjungupta08.paging3.viewmodel.MainViewModel
 import com.arjungupta08.paging3.viewmodel.MainViewModelFactory
 import dagger.hilt.android.AndroidEntryPoint
@@ -32,7 +31,10 @@ class MainActivity : AppCompatActivity() {
         viewModel = ViewModelProvider(this, mainViewModelFactory)[MainViewModel::class.java]
 
         recyclerView.layoutManager = LinearLayoutManager(this)
-        recyclerView.adapter = adapter
+        recyclerView.adapter = adapter.withLoadStateHeaderAndFooter(
+            header = LoaderAdapter(),
+            footer = LoaderAdapter()
+        )
 
         viewModel.quotesList.observe(this) {
             adapter.submitData(lifecycle, it)

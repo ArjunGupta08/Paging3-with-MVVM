@@ -1,5 +1,5 @@
 # Simple Pagination
-You can implement simple pagination with simple recycler view adapter as i implement that in my previous repository, you can see that [HERE}(https://quotable.io/).
+You can implement simple pagination with simple recycler view adapter as i implement that in my previous repository, you can see that (Here)[https://github.com/ArjunGupta08/Pagination-Android-Java]
 
 # Paging 3
 Now if you want to implement pagination with advance customizations than you have to implement Paging 3 Library.
@@ -10,7 +10,13 @@ We will be calling an API that supports pagination and use it to implement infin
 
 ` USED API ` - https://quotable.io/
 
-Paging Source defines the way to load data from network i.e. API. Once you have paging source setup - you can define a pager object that is used to define the configuration such as pageSize, maxSize. Paging Adapter is used to show this paging data inside recyclerview.
+We need 3 classes to setup the pagination.
+ - Paging Source
+   - Paging Source defines the way to load data from network i.e. API.
+ - Pager (Repository)
+   - Once you have paging source setup - you can define a pager object that is used to define the configuration such as pageSize, maxSize.
+ - Pageing Adapter
+   - Paging Adapter is used to show this paging data inside recyclerview.
 
 
 

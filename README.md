@@ -1,5 +1,5 @@
 # Simple Pagination
-You can implement simple pagination with simple recycler view adapter as i implement that in my previous repository, you can see that (Here)[https://github.com/ArjunGupta08/Pagination-Android-Java]
+You can implement simple pagination with simple recycler view adapter as i implement that in my previous repository, you can see that [Here](https://github.com/ArjunGupta08/Pagination-Android-Java)
 
 # Paging 3
 Now if you want to implement pagination with advance customizations than you have to implement Paging 3 Library.
@@ -22,6 +22,8 @@ We need 3 classes to setup the pagination.
 For Loading state, we have a special ` LoadStateAdapter ` that helps in showing loader in ` Header ` and ` Footer `. We have concat adapter functionality on Paging Adapter that can use this Load State Adapter. We can show this loader with different methods - 
   - withLoadStateHeaderAndFooter,
   - withLoadStateHeader,
-  - withLoadStateFooter. 
+  - withLoadStateFooter.
+
 We can show different UI for header and footer inside paging3 loader implementation. For that we need to create different LoadStateAdapter that will manage the loader implementation in Paging 3 Android. 
-https://youtu.be/Mkh1cd-OAMY?si=A0uxcRGQfSiReaWL
+
+[Resource](https://youtu.be/Mkh1cd-OAMY?si=A0uxcRGQfSiReaWL)

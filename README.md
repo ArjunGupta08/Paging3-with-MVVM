@@ -18,5 +18,10 @@ We need 3 classes to setup the pagination.
  - Pageing Adapter
    - Paging Adapter is used to show this paging data inside recyclerview.
 
-
-
+# Loader Implementation
+For Loading state, we have a special ` LoadStateAdapter ` that helps in showing loader in ` Header ` and ` Footer `. We have concat adapter functionality on Paging Adapter that can use this Load State Adapter. We can show this loader with different methods - 
+  - withLoadStateHeaderAndFooter,
+  - withLoadStateHeader,
+  - withLoadStateFooter. 
+We can show different UI for header and footer inside paging3 loader implementation. For that we need to create different LoadStateAdapter that will manage the loader implementation in Paging 3 Android. 
+https://youtu.be/Mkh1cd-OAMY?si=A0uxcRGQfSiReaWL
